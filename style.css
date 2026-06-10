@@ -51,7 +51,9 @@ header {
 
 /* Responsive Media Queries */
 @media (max-width: 668px) {
-    .menu-toggle { display: block; }
+    .mobile-menu{
+        display: none;
+    }
     .nav-links {
         position: fixed; right: -100%; top: 70px; flex-direction: row;
         background: #f1f5f8f2; width: 70%; padding: 30px; transition: 0.4s;
@@ -89,7 +91,7 @@ header {
 }
 
 /* 1. The Waterfall Layout */
-.waterfall-container {flex-direction: column; /* 2 columns on desktop */column-gap: 40px;padding: 20px;
+.waterfall-container {flex-direction: row; /* 2 columns on desktop */row-gap: 40px;padding: 20px;
     margin-top: 30px;
 }
 

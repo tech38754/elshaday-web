@@ -15,7 +15,7 @@ function showSection(sectionId) {
     }
 
     // ሞባይል ላይ ከሆነ ሜኑውን ዝጋ
-    const navLinks = document.querySelector('.nav-links');
+    const navLinks = document.querySelector('');
     navLinks.classList.remove('active');
 }
 
