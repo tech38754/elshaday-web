@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="am">
 <head>
     <meta charset="UTF-8">
@@ -12,12 +12,16 @@
     <div class="ocean"><div class="wave"></div></div>
 
     <header>
-        <div class="logo" onclick="showSection('home')"><span style="color: rgb(177, 5, 5); font-style:oblique;font-weight: 800; text-align: center;">ECHT</span><span style="color: orangered; font-style:oblique;font-weight: 800;">/ኤበአቡ</span></div>
-        
-        
-        
+        <div class="logo" onclick="showSection('home')">
+            <span style="color: rgb(241, 12, 12); font-style:italic;font-weight: 700;">ኤበ</span><span style="color: rgb(21, 0, 255);font-style:inherit;font-weight: 700;">አማ</span>
+        </div>
+
         <nav>
-            
+            <!-- Hamburger: shows only on small screens, toggles .nav-links -->
+            <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" role="button" tabindex="0">
+                <i class="fas fa-bars"></i>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#" onclick="showSection('home')"><span class="am">መነሻ</span><span class="en">Home</span></a></li>
                 <li><a href="#" onclick="showSection('about')"><span class="am">ስለ እኛ</span><span class="en">About Us</span></a></li>
@@ -27,27 +31,26 @@
             </ul>
 
             <div class="menu-container">
-            <div class="menu-icon" onclick="toggleMenu()">☰</div>
-            <div class="dropdown" id="navDrop">
-            <a href="#" onclick="showSection('register')">Registration</a>
-            <a href="#" onclick="showSection('donate')">Donet Now</a>
-            <a href="#" onclick="showSection('uplaod')">Uploads</a>
-            <a href="#" onclick="showSection('terms-section')">Terms & Legacy</a>
-        </div>
-        </div>
-        
+                <div class="menu-icon" onclick="toggleMenu()" aria-label="More options" role="button" tabindex="0">☰</div>
+                <div class="dropdown" id="navDrop">
+                    <a href="#" onclick="showSection('register')">Registration</a>
+                    <a href="#" onclick="showSection('donate')">Donet Now</a>
+                    <a href="#" onclick="showSection('uplaod')">Uploads</a>
+                    <a href="#" onclick="showSection('terms-section')">Terms &amp; Legacy</a>
+                </div>
+            </div>
         </nav>
     </header>
 
     <main id="main-content">
-        
+
         <section id="home" class="page active">
-            
+
           <div class="glass">
                 <h1 class="am"><span style="color:orangered ;">ኤልሻዳይ በጎ </span><span style="color:rgb(0, 17, 255) ;">አድራጎት ስራ ማህበር</span></h1>
                 <h1 class="en"><span style="color:orangered ;">Elshaddai Charity</span> Association</h1>
                 <blockquote class="am">"ለድሀ ቸርነትን የሚያደርግ ለእግዚአብሔር ያበድራል፥ በጎነቱንም መልሶ ይከፍለዋል።" <br><span>(ምሳሌ 19:17)</span><br>
-                
+
 
 "ሖሮናዊውም ሰንባላጥ፥ ባሪያውም አሞናዊው ጦብያ፥ ዓረባዊውም ጌሳም በሰሙ ጊዜ በንቀት ሳቁብን፥ ቀላል አድርገውንም፦ ይህ የምታደርጉት ነገር ምንድር ነው? በውኑ በንጉሡ ላይ ትሸፍቱ ዘንድ ትወድዳላችሁን? አሉ።
 
@@ -80,7 +83,7 @@
                 <div class="photo-card float-14"><img src="elshaday.jpg" alt=""></div>
                 <div class="photo-card float-15"><img src="elogo.png" alt=""></div>
                 <div class="photo-card float-16"><img src="els2.jpg" alt=""></div>
-            
+
             </div>
 
        <div>
@@ -106,33 +109,33 @@
        </section>
 
         <section id="about" class="page">
-        
+
     <div class="waterfall-container">
         <article class="waterfall-item">
-            <h2>Our Story</span></h2><br>
+            <h2>Our Story</h2><br>
             <p>Elshaday Charity Association serves as a vital bridge...</p>
             <p>ኤልሻዳይ በጎ አድራጎት ማህበር በኅብረተሰቡ ሀብትና ዕርዳታው ይበልጥ በሚያስፈልጋቸው ግለሰቦች መካከል እንደ ወሳኝ ድልድይ ሆኖ ያገለግላል።
-               በአካባቢው ያለውን የኢኮኖሚ መበላለጥ ለመቅረፍ የተመሠረተው ድርጅታችን፥ ዘላቂ ለውጥ ሊመጣ የሚችለው ማኅበረሰቡን ከውስጥ ማብቃት 
+               በአካባቢው ያለውን የኢኮኖሚ መበላለጥ ለመቅረፍ የተመሠረተው ድርጅታችን፥ ዘላቂ ለውጥ ሊመጣ የሚችለው ማኅበረሰቡን ከውስጥ ማብቃት
                ስንችል ብቻ ነው በሚለው መሠረታዊ መርህ ላይ የተገነባ ነው። እኛ ዕርዳታን በማቅረብ ብቻ አንወሰንም፤ ይልቁንም ዘላቂ አጋርነትን እንፈጥራለን።
                ባለፉት ዓመታት፣ የእኛ ውጥኖች ከተራ የዕርዳታ ስርጭት አልፈው የድህነትን፣ የድንቁርናን (ያልተማሩ መሆንን) እና የጤና ቀውሶችን መሠረታዊ መንስኤዎች ወደሚያስወግዱ የተቀናጁ ፕሮግራሞች አድገዋል። በግልጽነትና በጋራ መከባበር ላይ የተመሠረተ አካባቢን በመፍጠር፣ የወደፊቱን የለጋሾች፣ የበጎ ፈቃደኞች እና የጥቅማጥቅም ተረካቢዎች ትውልድ ለአንድ የጋራ ዓላማ እንዲተጋ ማነሳሳት እንደምንችል እናምናለን፤ ያም ዓላማ፦ ራሱን የቻለና ማንኛውንም ችግር መቋቋም የሚችል ማኅበረሰብ መገንባት ነው።</p>
             <p class="am">ኤልሻዳይ በጎ አድራጎት ማህበር የተመሰረተው በጎነትን በተግባር ለመግለጥና የተቸገሩትን ለመርዳት ነው።</p><br>
             <p class="en">Elshaddai Charity was established to manifest kindness through action and support those in need.</p>
-                
+
     </article>
-    
+
         <article class="waterfall-item">
             <h2>Our Vision</h2>
             <p>A future of equality where every individual thrives independently.</p>
-            <p>Current: "A future where every individual has access to the basic necessities of life, 
+            <p>Current: "A future where every individual has access to the basic necessities of life,
               regardless of their background—empowering local communities to thrive independently."
 
              Expanded: "We envision a world where socio-economic status no longer dictates a person's
-             quality of life. By fostering a foundation of resilience, we strive to build a future 
+             quality of life. By fostering a foundation of resilience, we strive to build a future
              where every individual possesses the tools, confidence, and opportunity to lead, innovate,
-             and thrive within their own community. We see a future of self-sustaining societies, 
+             and thrive within their own community. We see a future of self-sustaining societies,
              no longer reliant on external aid, but flourishing through local leadership and shared prosperity."</p>
         </article>
-        
+
         <article class="waterfall-item">
             <h2>Our Mission</h2>
             <p>To provide tangible, sustainable solutions through community outreach and education.</p>
@@ -140,10 +143,10 @@
                educational initiatives, and healthcare support, fostering hope and self-reliance."
 
                Expanded: "Our mission is to serve as a catalyst for positive change by bridging the gap between
-               available resources and the communities that need them most. We work tirelessly to remove 
-               the systemic barriers that prevent individuals from achieving their full potential. 
+               available resources and the communities that need them most. We work tirelessly to remove
+               the systemic barriers that prevent individuals from achieving their full potential.
                By collaborating with local stakeholders, families, and partners, we ensure that every initiative
-               —whether in education, health, or economic support—is tailored to address the root causes of 
+               —whether in education, health, or economic support—is tailored to address the root causes of
                inequality and promote long-term stability."</p>
         </article>
 
@@ -151,25 +154,25 @@
             <h2>Our Objectives</h2>
             <p>
                 <span style="color: #eb0d23;">Empowerment</span>: Economic self-sufficiency.
-                    We believe in the power of potential. 
+                    We believe in the power of potential.
                     We provide vocational training, micro-enterprise support,
                     and mentorship to help families move from subsistence to self-sufficiency."</p>
-                
+
                 <p><span style="color: #eb0d23;">Education</span>: Access for underprivileged children and for the community.
-                    Knowledge is the greatest equalizer. Our goal is to dismantle the barriers 
-                    to learning by supplying scholastic materials, funding tuition, 
+                    Knowledge is the greatest equalizer. Our goal is to dismantle the barriers
+                    to learning by supplying scholastic materials, funding tuition,
                     and creating safe, conducive environments for underprivileged students to succeed.
                 </p>
                 <p><span style="color: #eb0d23;">Healthcare</span>: Facilitating essential services.
                     Health is the foundation of a productive life.
-                    We focus on preventive care, nutritional support, and 
+                    We focus on preventive care, nutritional support, and
                     facilitating access to basic medical services,
                     ensuring no one is left behind due to a lack of resources."
                 </p>
                 <p><span style="color: #eb0d23;">
                   Community Building</span>: True change happens from within.
-                  We focus on organizing community-led forums, volunteer drives, 
-                  and collaborative problem-solving platforms to strengthen the social fabric of our region." 
+                  We focus on organizing community-led forums, volunteer drives,
+                  and collaborative problem-solving platforms to strengthen the social fabric of our region."
                 </p>
         </article>
 
@@ -195,16 +198,16 @@
     </section>
     <section>
         <div class="waterfall">
-            <article class="waterfall">
-        <video class="fullscreen-video" width="320" height="240" controls>
+            <article class="fullscreen-video">
+        <video controls>
            <source src="ቭ1.mp4" type="">
              </video>
         </article>
              </div>
-             
+
              <div class="waterfall">
                 <article class="fullscreen-video">
-          <video  width="300" height="200" controls>  
+          <video controls>
            <source src="ቭ2.mp4" type="">
            </video>
            </article>
@@ -212,9 +215,9 @@
 
             <div class="waterfall">
                 <article class="fullscreen-video">
-           <video  width="320" height="240" controls> 
+           <video controls>
            <source src="ቭ3.mp4" type="">
-           </video> 
+           </video>
 </article>
 </div>
 
@@ -226,11 +229,11 @@
             </article>
             </div>
 
-             
-            
+
+
              <div class="waterfall">
                 <article class="fullscreen-video">
-          <video width="300" height="200" controls>  
+          <video controls>
            <source src="ቭ6.mp4" type="">
            </video>
             </article>
@@ -238,9 +241,9 @@
 
              <div class="waterfall">
                 <article class="fullscreen-video">
-           <video width="320" height="240" controls> 
+           <video controls>
            <source src="ቭ7.mp4" type="">
-           </video> 
+           </video>
       </article>
       </div>
 </section>
@@ -262,7 +265,9 @@
         </button><br>
      <!-- PAYMENT BOX -->
         <div id="donateModal" class="modal">
+          <div class="modal-content">
 
+            <button type="button" class="back-btn" id="donateCloseBtn" aria-label="Close">&times;</button>
 
             <h3>Choose Payment Method</h3><br>
 
@@ -283,13 +288,13 @@
             </div><br>
 
             <div class="payment-card">
-                
+
                 <a href="https://chapa.co/" target="_blank">
                     <h4>🌍 Chapa Payment</h4><br>
                     Pay Online
                 </a>
             </div>
-</div>
+          </div>
         </div>
         </div>
 </section>
@@ -298,7 +303,7 @@
         <section id="register" class="page">
             <div class="reg-form glass">
             <h2>የሚረዱ እጆች፣ የሚቀየሩ ህይወቶች</h2>
-            <p>Helping Hands, Changing Lives. 
+            <p>Helping Hands, Changing Lives.
                ለሚያስፈልጋቸው ወገኖቻችን ተስፋን እና እንክብካቤን ለማድረስ በጋራ እንቁም::</p>
             <a href="#register" class="btn-primary">አሁኑኑ ይቀላቀሉን</a>
                 <h2 class="am"> ምዝገባ</h2><br>
@@ -318,125 +323,118 @@
 <article class="legacy-section">
         <h2>1. የአገልግሎት ውል (Terms of Service)</h2>
         <br>
-        <p>ወደ ኤልሻዳይ በጎ አድራጎት ቡድን (Elshaday Charity Team) ድረ-ገጽ እንኳን በደህና መጡ። 
+        <p>ወደ ኤልሻዳይ በጎ አድራጎት ቡድን (Elshaday Charity Team) ድረ-ገጽ እንኳን በደህና መጡ።
            ይህንን ድረ-ገጽ ሲጠቀሙ በዚህ የአገልግሎት ውል ለመገዛት እና ደንቦቹን ለማክበር ተስማምተዋል።
            እባክዎ ውሉን በጥንቃቄ ያንብቡት።</p><br>
 
-        
+
             <h3>1.1 ውል መቀበል</h3>
             <br>
-            <p>ይህንን ድረ-ገጽ በመጠቀምዎ በእነዚህ ውሎች ለመገዛት መስማማትዎን ያረጋግጣሉ። 
+            <p>ይህንን ድረ-ገጽ በመጠቀምዎ በእነዚህ ውሎች ለመገዛት መስማማትዎን ያረጋግጣሉ።
                በነዚህ ውሎች ካልተስማሙ ድረ-ገጹን ከመጠቀም መቆጠብ ይኖርብዎታል።</p><br>
 
         </article>
 
     <article class="legacy-section">
             <h3>1.2 የዕቅዱ እና የገጹ ዓላማ፦</h3><br>
-            <p>የኤልሻዳይ በጎ አድራጎት ቡድን ማህበራዊ እገዛዎችን እና የማህበረሰብ ልማትን ለመደገፍ የተቋቋመ ለትርፍ ያልቆመ በጎ አድራጎት ስራ ነው። 
+            <p>የኤልሻዳይ በጎ አድራጎት ቡድን ማህበራዊ እገዛዎችን እና የማህበረሰብ ልማትን ለመደገፍ የተቋቋመ ለትርፍ ያልቆመ በጎ አድራጎት ስራ ነው።
                 ይህ ድረ-ገጽ መረጃዎችን፣ ወቅታዊ ዜናዎችን ለማጋራት እና የበጎ አድራጎት ልገሳዎችን ለማመቻቸት ያገለግላል።</p>
 
 
         </article>
         <article class="legacy-section">
             <h3>1.3 የልገሳ እና የክፍያ ሁኔታዎች</h3><br><br>
-            
+
                 <p><strong>በፍቃደኝነት የሚደረግ ድጋፍ፦</strong>
                      በድረ-ገጻችን የክፍያ አማራጮች (ቴሌብር፣ ሲቢኢ ብር፣ የኢትዮጵያ ንግድ ባንክ እና ጫፓ) በኩል የሚደረጉ ልገሳዎች በሙሉ ሙሉ በሙሉ በተጠቃሚው ፍቃደኝነት ላይ የተመሰረቱ ናቸው።</p>
                 <p><strong>ትክክለኛ መረጃ ማቅረብ፦</strong></p><br>
                     <br><p>
-                     ለጋሾች ትክክለኛ እና ህጋዊ የክፍያ መረጃ ማቅረብ አለባቸው። 
+                     ለጋሾች ትክክለኛ እና ህጋዊ የክፍያ መረጃ ማቅረብ አለባቸው።
                      ተጠቃሚው የተሳሳተ መረጃ በማስገባቱ ምክንያት ለሚፈጠሩ የክፍያ ስህተቶች የኤልሻዳይ በጎ አድራጎት ቡድን ተጠያቂ አይሆንም።</p><br>
                 <p><strong>የገንዘብ ተመላሽ ፖሊሲ፦</strong></p><br>
-                     <p>የሚደረጉ ልገሳዎች ወዲያውኑ ለበጎ አድራጎት ፕሮጀክቶች እና ለማህበረሰብ ድጋፍ የሚውሉ በመሆናቸው በአጠቃላይ ተመላሽ አይደረጉም። 
+                     <p>የሚደረጉ ልገሳዎች ወዲያውኑ ለበጎ አድራጎት ፕሮጀክቶች እና ለማህበረሰብ ድጋፍ የሚውሉ በመሆናቸው በአጠቃላይ ተመላሽ አይደረጉም።
                         በክፍያ ሂደትዎ ላይ እውነተኛ የቴክኒክ ስህተት ተፈጥሯል ብለው ካመኑ እባክዎ ወዲያውኑ ያግኙን።</p>
             <br>
-    
 
-    
+
+
             <h3>1.4 የስነ-ምግባር ደንብ</h3><br>
             <p>ተጠቃሚዎች ድረ-ገጹን ለሚከተሉት ተግባራት ላለመጠቀም ተስማምተዋል፦</p><br>
-            
+
                 <p>ለማንኛውም ማጭበርበር ወይም ህገ-ወጥ አላማዎች መጠቀም።
                    የድረ-ገጹን ስራ፣ የደህንነት ባህሪያት ወይም የጀርባ አገልጋዮችን (backend servers) ለማስተጓጎል መሞከር።
                    ከድረ-ገጹ ጋር በሚገናኙበት ጊዜ የራስን ማንነት ወይም ግንኙነት አሳስቶ ማቅረብ።</p><br>
-            
 
 
-    
+
             <h3>1.5 የኃላፊነት ገደብ</h3><br>
-            <p>የኤልሻዳይ በጎ አድራጎት ቡድን ድረ-ገጹ ደህንነቱ የተጠበቀ እና ሁል ጊዜ የሚሰራ እንዲሆን ይጥራል። 
+            <p>የኤልሻዳይ በጎ አድራጎት ቡድን ድረ-ገጹ ደህንነቱ የተጠበቀ እና ሁል ጊዜ የሚሰራ እንዲሆን ይጥራል።
                ሆኖም ግን ድረ-ገጹ ያለ ምንም መቆራረጥ በቋሚነት እንደሚሰራ ዋስትና መስጠት አንችልም።
-               ይህንን ድረ-ገጽ ወይም የሶስተኛ ወገን የክፍያ መረቦችን በመጠቀምዎ ወይም ለመጠቀም ባለመቻልዎ 
+               ይህንን ድረ-ገጽ ወይም የሶስተኛ ወገን የክፍያ መረቦችን በመጠቀምዎ ወይም ለመጠቀም ባለመቻልዎ
                ለሚመጣ ማንኛውም ቀጥተኛም ሆነ ቀጥተኛ ያልሆነ ጉዳት ተጠያቂ አንሆንም።</p><br>
-        
 
 
             <h3>1.6 በውሉ ላይ የሚደረጉ ለውጦች</h3><br>
-            <p>ይህንን ውል በማንኛውም ጊዜ የማሻሻል መብታችን የተጠበቀ ነው። 
+            <p>ይህንን ውል በማንኛውም ጊዜ የማሻሻል መብታችን የተጠበቀ ነው።
                ለውጦቹ በዚህ ገጽ ላይ ከተለጠፉበት ጊዜ ጀምሮ ወዲያውኑ ተፈጻሚ ይሆናሉ።</p>
                </article>
         </div>
 <article class="legacy-section">
-        <h2>2. የታሪክ ቅርስ እና የግል መረጃ ጥበቃ (Legacy & Privacy Policy)</h2><br>
-        
-        
-            <p><strong>የድርጅታችን መርህ፦</strong> የኤልሻዳይ በጎ አድራጎት ቡድን የተመሰረተው ግልጽነት ባለውና ዘላቂ በሆነ የማህበረሰብ ተፅዕኖ ላይ ነው። 
-                          የታሪክ ቅርሳችን የሚለካው ለለጋሾቻችን ባለን ታማኝነት እና ለምናገለግላቸው ወገኖች ባለን ርህራሄ ነው። 
-                          እያንዳንዱ የምታደርጉት አስተዋፅዖ በማህበረሰባችን ውስጥ ዘላቂ እና ሊረጋገጥ የሚችል የበጎ ለውጥ አሻራ ጥሎ እንዲያልፍ በማድረግ፣ ክፍት 
-                          እና ኦዲት ሊደረጉ የሚችሉ የፕሮጀክት መዝገቦችን ለመያዝ ቃል እንገባለን。</p><br>
-        
+        <h2>2. የታሪክ ቅርስ እና የግል መረጃ ጥበቃ (Legacy &amp; Privacy Policy)</h2><br>
 
-        
+
+            <p><strong>የድርጅታችን መርህ፦</strong> የኤልሻዳይ በጎ አድራጎት ቡድን የተመሰረተው ግልጽነት ባለውና ዘላቂ በሆነ የማህበረሰብ ተፅዕኖ ላይ ነው።
+                          የታሪክ ቅርሳችን የሚለካው ለለጋሾቻችን ባለን ታማኝነት እና ለምናገለግላቸው ወገኖች ባለን ርህራሄ ነው።
+                          እያንዳንዱ የምታደርጉት አስተዋፅዖ በማህበረሰባችን ውስጥ ዘላቂ እና ሊረጋገጥ የሚችል የበጎ ለውጥ አሻራ ጥሎ እንዲያልፍ በማድረግ፣ ክፍት
+                          እና ኦዲት ሊደረጉ የሚችሉ የፕሮጀክት መዝገቦችን ለመያዝ ቃል እንገባለን。</p><br>
+
+
             <h3>2.1 የምንሰበስበው መረጃ</h3><br>
             <p>ልገሳዎችን ለማመቻቸት እና ደጋፊዎቻችንን ወቅታዊ መረጃ ለማድረስ የሚከተሉትን አነስተኛ መረጃዎች ልንሰበስብ እንችላለን፦</p><br>
-        
-                <p><strong>የመገናኛ መረጃ፦</strong> 
-                    ስም፣ የኢሜይል አድራሻ እና የስልክ ቁጥር (በእውቂያ ቅጾች በኩል በራስዎ ፍቃድ ሲሰጥ)።
+
+                <p><strong>የመገናኛ መረጃ፦</strong>
+                    ስም፣ የኢሜይል አድራሻ እና የስልክ ቁጥር (በእውቂያ ቅጾች በኩል በራስዎ ፍቃድ ሲሰጥ)።</p>
                 <p><strong>የክፍያ መዝገቦች፦</strong> የተሳኩ ልገሳዎችን ለማረጋገጥ በአገር ውስጥ የክፍያ አቅራቢዎች (Telebirr, CBE, Chapa)
                      የሚሰጡ የማጣቀሻ መለያ ቁጥሮችን (Reference IDs)። <span style="color: var(--accent-color); font-weight: 600;">
                      የአካውንት ሙሉ ቁጥር ወይም ሚስጥራዊ የይለፍ ቁጥሮችን (PIN) በኛ ሰርቨር ላይ በፍጹም አናስቀምጥም።</span></p>
-        
-        
 
-        
+
+
             <h3>2.2 መረጃውን ለምን እንጠቀማለን?</h3><br>
             <p>የተሰበሰበውን መረጃ ለሚከተሉት ተግባራት ብቻ እንጠቀማለን፦
                 ያደረጉትን ልገሳ ለማረጋገጥ እና ሂደቱን ለማጠናቀቅ።
                 የክፍያ ምስጋናዎችን እና የፕሮጀክቶችን ሂደት መረጃዎችን ለመላክ።
                 ለትርፍ ያልተቋቋሙ ድርጅቶች የሚፈለጉትን ህጋዊ የፋይናንስ መዝገቦች ለመያዝ።
                 </p><br>
-            
-        
+
             <h3>2.3 የመረጃ አያያዝ እና የታሪክ ጥበቃ</h3><br>
-            <p>የድርጅታችንን የረጅም ጊዜ ግልጽነት ለማክበር፣ የቆዩ የልገሳ መዝገቦች እና የፋይናንስ ፕሮጀክት 
-              ማጠቃለያዎች ደህንነታቸው በተጠበቀ ቦታ ይቀመጣሉ። ይህም ለኤልሻዳይ በጎ አድራጎት ቡድን የሚደረገው 
-              የህዝብ ድጋፍ ታሪክ በጊዜ ሂደት ተረጋግጦ እንዲኖር ያደርጋል። 
+            <p>የድርጅታችንን የረጅም ጊዜ ግልጽነት ለማክበር፣ የቆዩ የልገሳ መዝገቦች እና የፋይናንስ ፕሮጀክት
+              ማጠቃለያዎች ደህንነታቸው በተጠበቀ ቦታ ይቀመጣሉ። ይህም ለኤልሻዳይ በጎ አድራጎት ቡድን የሚደረገው
+              የህዝብ ድጋፍ ታሪክ በጊዜ ሂደት ተረጋግጦ እንዲኖር ያደርጋል።
               ማንኛውም ተጠቃሚ በግልጽ ሲጠይቅ የእሱነቱን የሚገልጹ የግል መረጃዎች እንዲደበቁ ወይም እንዲሰረዙ ይደረጋል።</p><br>
 
 
-        
             <h3>2.4 የሶስተኛ ወገን አገልግሎቶች</h3><br>
             <p>ድረ-ገጻችን ከሶስተኛ ወገን የክፍያ ስርዓቶች ጋር የተገናኘ ነው። እነዚህ ውጫዊ ድርጅቶች
-              የእርስዎን የፋይናንስ ግብይቶች በራሳቸው ኢንክሪፕት በተደረጉ የደህንነት ስርዓቶች ያስተናግዳሉ። 
+              የእርስዎን የፋይናንስ ግብይቶች በራሳቸው ኢንክሪፕት በተደረጉ የደህንነት ስርዓቶች ያስተናግዳሉ።
               ክፍያ በሚፈጽሙበት ጊዜ የቴሌብር፣ ሲቢኢ እና ጫፓ የራሳቸውን የግል መረጃ ጥበቃ ፖሊሲዎች እንዲያነቡ እናበረታታለን።</p><br>
-        
 
-        
+
             <h3>2.5 ያግኙን</h3><br>
-            <p>ስለነዚህ ውሎች፣ ስለ ድርጅታችን መርህ ወይም የእርስዎ መረጃ እንዴት እንደሚይዝ ማንኛውም ጥያቄ ካለዎት፣ 
+            <p>ስለነዚህ ውሎች፣ ስለ ድርጅታችን መርህ ወይም የእርስዎ መረጃ እንዴት እንደሚይዝ ማንኛውም ጥያቄ ካለዎት፣
              እባክዎ በይፋዊ የእውቂያ ገጻችን በኩል የኤልሻዳይ በጎ አድራጎት ቡድን ማስተባበሪያ ጽሕፈት ቤትን ያግኙ።</p>
              </article>
         </div>
     </section>
 <section id="uplaod" class="page">
     <form id="uploadForm" action="/upload-endpoint" method="POST" enctype="multipart/form-data">
-  
+
   <!-- Hidden input containing the original registered name (Rendered by your backend) -->
   <input type="hidden" id="registeredName" value="" />
 
   <!-- Name input fields -->
   <div class="input-group">
-    <label for="uploaderName"><span style="color: blue;">Enter Your Full Name:</label>
+    <label for="uploaderName" style="color: blue;">Enter Your Full Name:</label>
     <input type="text" id="uploaderName" placeholder="Must match your registered name" required />
     <span id="nameFeedback" class="feedback-msg"></span>
   </div>
@@ -449,7 +447,7 @@
     <input id="file-upload" type="file" name="myFile" required />
     <span id="fileNameDisplay">No file chosen</span>
   </div>
-  
+
   <!-- Submit button -->
   <button type="submit" id="submitBtn" class="submit-btn" disabled>Upload</button>
 </form>

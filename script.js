@@ -1,10 +1,7 @@
-
-
 // ገጾችን የመቀያየር ተግባር
 function showSection(sectionId) {
     // ሁሉንም ገጾች ደብቅ
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(page => {
+    document.querySelectorAll('.page').forEach(page => {
         page.classList.remove('active');
     });
 
@@ -15,8 +12,17 @@ function showSection(sectionId) {
     }
 
     // ሞባይል ላይ ከሆነ ሜኑውን ዝጋ
-    const navLinks = document.querySelector('');
-    navLinks.classList.remove('active');
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+        navLinks.classList.remove('active');
+    }
+
+    const dropdown = document.getElementById('navDrop');
+    if (dropdown) {
+        dropdown.classList.remove('show');
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // የቀድሞው የቋንቋ እና የሞባይል ሜኑ ኮድ እዚህ ይቀጥላል...
@@ -25,151 +31,150 @@ function toggleLanguage() {
     document.body.classList.toggle('am-mode');
 }
 
-const menuToggle = document.getElementById('mobile-menu');
-menuToggle.addEventListener('click', () => {
-    document.querySelector('.nav-links').classList.toggle('active');
-});
-
-
-function toggleMenu(){
-    document.getElementById("navDrop").classList.toggle("show")
+// Opens/closes the primary nav (Home/About/Gallery/Contact) on mobile
+function toggleMobileNav() {
+    const navLinks = document.querySelector('.nav-links');
+    if (navLinks) {
+        navLinks.classList.toggle('active');
+    }
 }
 
-window.onclick = function(event) {
-            if (!event.target.matches('.menu-icon')) {
-                var dropdowns = document.getElementsByClassName("dropdown");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
+// Opens/closes the secondary "more" dropdown (Registration/Donate/Uploads/Terms)
+function toggleMenu() {
+    const dropdown = document.getElementById('navDrop');
+    if (dropdown) {
+        dropdown.classList.toggle('show');
+    }
+}
+
+function openDonateModal() {
+    const modal = document.getElementById('donateModal');
+    if (modal) {
+        modal.style.display = 'flex';
+        document.body.classList.add('no-scroll');
+    }
+}
+
+function closeDonateModal() {
+    const modal = document.getElementById('donateModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.classList.remove('no-scroll');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Mobile hamburger (#mobile-menu) for the primary nav links ---
+    const mobileMenuBtn = document.getElementById('mobile-menu');
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileNav);
+        mobileMenuBtn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleMobileNav();
             }
+        });
+    }
+
+    // --- Close the secondary dropdown when clicking outside of it ---
+    window.addEventListener('click', (event) => {
+        const dropdown = document.getElementById('navDrop');
+        if (dropdown && dropdown.classList.contains('show') && !event.target.closest('.menu-container')) {
+            dropdown.classList.remove('show');
         }
+    });
 
+    // --- Gallery image viewer ---
+    const viewer = document.getElementById('imageViewer');
+    const viewerImg = document.getElementById('viewerImg');
+    const closeBtn = document.querySelector('.close-btn');
 
-    const images = document.querySelectorAll(".photo-card img");
-    const viewer = document.getElementById("imageViewer");
-    const viewerImg = document.getElementById("viewerImg");
-    const closeBtn = document.querySelector(".close-btn");
-
-    // Open image
-    images.forEach(img => {
-        img.addEventListener("click", () => {
-            viewer.style.display = "flex";
-            viewerImg.src = img.src;
+    document.querySelectorAll('.photo-card img').forEach(img => {
+        img.addEventListener('click', () => {
+            if (viewer && viewerImg) {
+                viewer.style.display = 'flex';
+                viewerImg.src = img.src;
+            }
         });
     });
 
-    // Close image
-    closeBtn.addEventListener("click", () => {
-        viewer.style.display = "none";
+    if (closeBtn && viewer) {
+        closeBtn.addEventListener('click', () => {
+            viewer.style.display = 'none';
+        });
+    }
+
+    if (viewer) {
+        viewer.addEventListener('click', (e) => {
+            if (e.target !== viewerImg) {
+                viewer.style.display = 'none';
+            }
+        });
+    }
+
+    // --- Fullscreen on video click (targets the <video> tags directly,
+    //     not their wrapping .fullscreen-video article) ---
+    document.querySelectorAll('.fullscreen-video video').forEach(video => {
+        video.addEventListener('click', () => {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            }
+        });
     });
 
-    // Close when clicking outside image
-    viewer.addEventListener("click", (e) => {
-        if (e.target !== viewerImg) {
-            viewer.style.display = "none";
+    // --- Donate modal: close button + click-outside-to-close ---
+    const donateModal = document.getElementById('donateModal');
+    const donateCloseBtn = document.getElementById('donateCloseBtn');
+
+    if (donateCloseBtn) {
+        donateCloseBtn.addEventListener('click', closeDonateModal);
+    }
+    if (donateModal) {
+        donateModal.addEventListener('click', (e) => {
+            if (e.target === donateModal) {
+                closeDonateModal();
+            }
+        });
+    }
+
+    // --- Upload form: live name-match validation ---
+    const uploaderNameInput = document.getElementById('uploaderName');
+    const registeredNameField = document.getElementById('registeredName');
+    const fileInput = document.getElementById('file-upload');
+    const fileNameDisplay = document.getElementById('fileNameDisplay');
+    const nameFeedback = document.getElementById('nameFeedback');
+    const submitBtn = document.getElementById('submitBtn');
+
+    if (uploaderNameInput && registeredNameField && fileInput && fileNameDisplay && nameFeedback && submitBtn) {
+        const registeredName = registeredNameField.value.trim().toLowerCase();
+
+        function validateForm() {
+            const enteredName = uploaderNameInput.value.trim().toLowerCase();
+            const isFileSelected = fileInput.files.length > 0;
+
+            if (enteredName === '') {
+                nameFeedback.textContent = '';
+                submitBtn.disabled = true;
+                return;
+            }
+
+            if (enteredName === registeredName) {
+                nameFeedback.textContent = '✓ Name matches registration record.';
+                nameFeedback.className = 'feedback-msg success';
+                submitBtn.disabled = !isFileSelected;
+            } else {
+                nameFeedback.textContent = '✗ Name does not match registered member record.';
+                nameFeedback.className = 'feedback-msg error';
+                submitBtn.disabled = true;
+            }
         }
-    });
 
-    const videos = document.querySelectorAll(".fullscreen-video");
+        fileInput.addEventListener('change', () => {
+            fileNameDisplay.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : 'No file chosen';
+            validateForm();
+        });
 
-videos.forEach(video => {
-
-    video.addEventListener("click", () => {
-
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        }
-
-    });
-
+        uploaderNameInput.addEventListener('input', validateForm);
+    }
 });
-
-
-
-function toggleMenu() {
-  const dropdown = document.getElementById("navDrop");
-  
-  // Toggles the 'show' class on and off
-  dropdown.classList.toggle("show");
-}
-
-// Optional: Closes the menu if the user clicks anywhere outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.menu-icon')) {
-    const dropdown = document.getElementById("navDrop");
-    if (dropdown.classList.contains('show')) {
-      dropdown.classList.remove('show');
-    }
-  }
-}
-
-
-
-function openDonateModal(){
-
-    document.getElementById("donateModal").style.display = "block";
-}
-
-
-function closeDonateModal(){
-
-    document.getElementById("donateModal").style.display = "block";
-}
-
-
-document.addEventListener("DOMContentLoaded", () => {
-  const uploaderNameInput = document.getElementById("uploaderName");
-  const registeredName = document.getElementById("registeredName").value.trim().toLowerCase();
-  const fileInput = document.getElementById("file-upload");
-  const fileNameDisplay = document.getElementById("fileNameDisplay");
-  const nameFeedback = document.getElementById("nameFeedback");
-  const submitBtn = document.getElementById("submitBtn");
-
-  // Function to validate name and file requirements
-  function validateForm() {
-    const enteredName = uploaderNameInput.value.trim().toLowerCase();
-    const isFileSelected = fileInput.files.length > 0;
-    
-    // Check if name field is empty
-    if (enteredName === "") {
-      nameFeedback.textContent = "";
-      submitBtn.disabled = true;
-      return;
-    }
-
-    // Check if entered name matches registered name
-    if (enteredName === registeredName) {
-      nameFeedback.textContent = "✓ Name matches registration record.";
-      nameFeedback.className = "feedback-msg success";
-      
-      // Only enable submit button if a file is ALSO selected
-      if (isFileSelected) {
-        submitBtn.disabled = false;
-      } else {
-        submitBtn.disabled = true;
-      }
-    } else {
-      nameFeedback.textContent = "✗ Name does not match registered member record.";
-      nameFeedback.className = "feedback-msg error";
-      submitBtn.disabled = true;
-    }
-  }
-
-  // Update file name display when customer selects a file
-  fileInput.addEventListener("change", () => {
-    if (fileInput.files.length > 0) {
-      fileNameDisplay.textContent = fileInput.files[0].name;
-    } else {
-      fileNameDisplay.textContent = "No file chosen";
-    }
-    validateForm(); // Re-evaluate after file change
-  });
-
-  // Check name validity in real-time as the customer types
-  uploaderNameInput.addEventListener("input", validateForm);
-});
-
-
