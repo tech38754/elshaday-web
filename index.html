@@ -12,35 +12,45 @@
     <div class="ocean"><div class="wave"></div></div>
 
     <header>
-        <div class="logo" onclick="showSection('home')">
-            <span style="color: rgb(241, 12, 12); font-style:italic;font-weight: 700;">ኤበ</span><span style="color: rgb(21, 0, 255);font-style:inherit;font-weight: 700;">አማ</span>
+    <div class="header-left">
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()" aria-label="More options" role="button" tabindex="0">☰</div>
         </div>
+    </div>
 
-        <nav>
-            <!-- Hamburger: shows only on small screens, toggles .nav-links -->
-            <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" role="button" tabindex="0">
-                <i class="fas fa-bars"></i>
-            </div>
+    <div class="logo" onclick="showSection('home')">
+        <span style="color: rgb(241, 12, 12); font-style:italic;font-weight: 700;">ኤበ</span><span style="color: rgb(21, 0, 255);font-style:inherit;font-weight: 700;">አማ</span>
+    </div>
 
-            <ul class="nav-links">
-                <li><a href="#" onclick="showSection('home')"><span class="am">መነሻ</span><span class="en">Home</span></a></li>
-                <li><a href="#" onclick="showSection('about')"><span class="am">ስለ እኛ</span><span class="en">About Us</span></a></li>
-                <li><a href="#" onclick="showSection('gallery')"><span class="am">ጋለሪ</span><span class="en">Gallery</span></a></li>
-                <li><a href="#" onclick="showSection('contact')"><span class="am">ለተጨማር</span><span class="en">Contact Us</span></a></li>
-                <li><button class="lang-btn" onclick="toggleLanguage()">E/አ</button></li>
-            </ul>
+    <div class="header-right">
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('home')"><span class="am">መነሻ</span><span class="en">Home</span></a></li>
+            <li><a href="#" onclick="showSection('about')"><span class="am">ስለ እኛ</span><span class="en">About Us</span></a></li>
+            <li><a href="#" onclick="showSection('gallery')"><span class="am">ጋለሪ</span><span class="en">Gallery</span></a></li>
+            <li><a href="#" onclick="showSection('contact')"><span class="am">ለተጨማር</span><span class="en">Contact Us</span></a></li>
+            <li><button class="lang-btn" onclick="toggleLanguage()">E/አ</button></li>
+        </ul>
+    </div>
+</header>
 
-            <div class="menu-container">
-                <div class="menu-icon" onclick="toggleMenu()" aria-label="More options" role="button" tabindex="0">☰</div>
-                <div class="dropdown" id="navDrop">
-                    <a href="#" onclick="showSection('register')">Registration</a>
-                    <a href="#" onclick="showSection('donate')">Donet Now</a>
-                    <a href="#" onclick="showSection('uplaod')">Uploads</a>
-                    <a href="#" onclick="showSection('terms-section')">Terms &amp; Legacy</a>
-                </div>
-            </div>
+<div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMenu()">
+    <div class="mobile-dropdown" id="navDrop" onclick="event.stopPropagation()">
+        <div class="drawer-header">
+            <h3>Menu</h3>
+            <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        </div>
+        <nav class="drawer-links">
+            <a href="#" onclick="showSection('home'); toggleMenu();">Home</a>
+            <a href="#" onclick="showSection('about'); toggleMenu();">About Us</a>
+            <a href="#" onclick="showSection('gallery'); toggleMenu();">Gallery</a>
+            <a href="#" onclick="showSection('contact'); toggleMenu();">Contact Us</a>
+            <a href="#" onclick="showSection('register'); toggleMenu();">Registration</a>
+            <a href="#" onclick="showSection('donate'); toggleMenu();">Donet Now</a>
+            <a href="#" onclick="showSection('uplaod'); toggleMenu();">Uploads</a>
+            <a href="#" onclick="showSection('terms-section'); toggleMenu();">Terms &amp; Legacy</a>
         </nav>
-    </header>
+    </div>
+</div>
 
     <main id="main-content">
 
@@ -59,6 +69,27 @@
                 <blockquote class="en">"Whoever is kind to the poor lends to the Lord, and he will reward them for what they have done." <br><span>(Proverbs 19:17)</span></blockquote>
                 <p>kind means a someone whoever commit it self to the others.</p>
             </div><br>
+
+            <section id="projects" class="section bg-light">
+        <h2 class="section-title">የምንሰራቸው ስራዎች (Our Projects)</h2>
+        <div class="container project-grid">
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3 style="color: greenyellow;">የቁስ ድጋፍ</h3>
+                <p style="color: rgb(253, 250, 250);">ለተማሪዎች የትምህርት ቁሳቁሶችን እና የትምህርት ክፍያ ድጋፍ ማድረግ::</p>
+            </div>
+            <div class="card">
+                <div class="icon">🍲</div>
+                <h3 style="color: #eb0d23;">የምግብ ድጋፍ</h3>
+                <p style="color: rgb(244, 240, 240);">ምግብ ለሚያስፈልጋቸው ቤተሰቦች የአልሚ ምግቦችን ማከፋፈል::</p>
+            </div>
+            <div class="card">
+                <div class="icon">🏗️</div>
+                <h3 style="color: yellow;">የማህበረሰብ ልማት እና ክህሎት</h3>
+                <p style="color: rgb(254, 253, 253);">ለረጅም ጊዜ ዕድገት የሚረዱ መሰረተ ልማቶችን እና ክህሎቶችን መገንባት::</p>
+            </div>
+        </div>
+    </section>
         </section>
 <section id="gallery" class="page">
             <div class="photo-grid">
@@ -112,7 +143,7 @@
 
     <div class="waterfall-container">
         <article class="waterfall-item">
-            <h2>Our Story</h2><br>
+            <h2>Our Story/ታርክ</h2><br>
             <p>Elshaday Charity Association serves as a vital bridge...</p>
             <p>ኤልሻዳይ በጎ አድራጎት ማህበር በኅብረተሰቡ ሀብትና ዕርዳታው ይበልጥ በሚያስፈልጋቸው ግለሰቦች መካከል እንደ ወሳኝ ድልድይ ሆኖ ያገለግላል።
                በአካባቢው ያለውን የኢኮኖሚ መበላለጥ ለመቅረፍ የተመሠረተው ድርጅታችን፥ ዘላቂ ለውጥ ሊመጣ የሚችለው ማኅበረሰቡን ከውስጥ ማብቃት
@@ -124,7 +155,7 @@
     </article>
 
         <article class="waterfall-item">
-            <h2>Our Vision</h2>
+            <h2>Our Vision/ራዕይ</h2>
             <p>A future of equality where every individual thrives independently.</p>
             <p>Current: "A future where every individual has access to the basic necessities of life,
               regardless of their background—empowering local communities to thrive independently."
@@ -137,7 +168,7 @@
         </article>
 
         <article class="waterfall-item">
-            <h2>Our Mission</h2>
+            <h2>Our Mission/ተልዕኮ</h2>
             <p>To provide tangible, sustainable solutions through community outreach and education.</p>
             <p>Current: "To provide tangible support and sustainable solutions through community outreach,
                educational initiatives, and healthcare support, fostering hope and self-reliance."
@@ -151,7 +182,7 @@
         </article>
 
         <article class="waterfall-item">
-            <h2>Our Objectives</h2>
+            <h2>Our Objectives/አላማዎች</h2>
             <p>
                 <span style="color: #eb0d23;">Empowerment</span>: Economic self-sufficiency.
                     We believe in the power of potential.
@@ -181,18 +212,18 @@
         <div class="container project-grid">
             <div class="card">
                 <div class="icon">📚</div>
-                <h3>የቁስ ድጋፍ</h3>
-                <p>ለተማሪዎች የትምህርት ቁሳቁሶችን እና የትምህርት ክፍያ ድጋፍ ማድረግ::</p>
+                <h3 style="color: greenyellow;">የቁስ ድጋፍ</h3>
+                <p style="color: rgb(252, 246, 246);">ለተማሪዎች የትምህርት ቁሳቁሶችን እና የትምህርት ክፍያ ድጋፍ ማድረግ::</p>
             </div>
             <div class="card">
                 <div class="icon">🍲</div>
-                <h3>የምግብ ድጋፍ</h3>
-                <p>ምግብ ለሚያስፈልጋቸው ቤተሰቦች የአልሚ ምግቦችን ማከፋፈል::</p>
+                <h3 style="color: #eb0d23;">የምግብ ድጋፍ</h3>
+                <p style="color: rgb(247, 238, 238);">ምግብ ለሚያስፈልጋቸው ቤተሰቦች የአልሚ ምግቦችን ማከፋፈል::</p>
             </div>
             <div class="card">
                 <div class="icon">🏗️</div>
-                <h3>የማህበረሰብ ልማት እና ክህሎት</h3>
-                <p>ለረጅም ጊዜ ዕድገት የሚረዱ መሰረተ ልማቶችን እና ክህሎቶችን መገንባት::</p>
+                <h3 style="color: yellow;">የማህበረሰብ ልማት እና ክህሎት</h3>
+                <p style="color: #f9f4f4;">ለረጅም ጊዜ ዕድገት የሚረዱ መሰረተ ልማቶችን እና ክህሎቶችን መገንባት::</p>
             </div>
         </div>
     </section>
@@ -306,11 +337,13 @@
             <p>Helping Hands, Changing Lives.
                ለሚያስፈልጋቸው ወገኖቻችን ተስፋን እና እንክብካቤን ለማድረስ በጋራ እንቁም::</p>
             <a href="#register" class="btn-primary">አሁኑኑ ይቀላቀሉን</a>
-                <h2 class="am"> ምዝገባ</h2><br>
+                <h2 class="am"> የአባላት ምዝገባ</h2><br>
                 <h2 class="en"> Registration</h2><br>
                 <form>
                     <input type="text" placeholder="ሙሉ ስም / Full Name"><br><br>
+                    <input type="text" placeholder="አገር/Country"><br><br>
                     <input type="email" placeholder="ኢሜይል / Email"><br><br>
+                    <input type="text" placeholder="PhoneNo"><br><br>
                     <button type="submit" class="submit-btn am">ይመዝገቡ</button><br>
                     <button type="submit" class="submit-btn en">Register</button>
                 </form>
@@ -458,7 +491,7 @@
 
     <script src="script.js"></script>
     <div class="footer">
-       <p>&copy; 2016E.C ECHT/2026 ኤልሻዳይ በጎ አድራጎት ቡድን (Elshaday Charity Team)።</p>
+       <h6 style="font-family:Franklin; color: rgb(21, 20, 20);">Copy right &copy; 2016/2024-2026 ኤበአማ(ECT)</h6>
     </div>
 </body>
 </html>

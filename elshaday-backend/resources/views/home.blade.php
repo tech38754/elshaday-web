@@ -1,0 +1,492 @@
+
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ኤልሻዳይ በጎ አድራጎት | Elshaddai Charity</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body class="am-mode">
+
+    <div class="ocean"><div class="wave"></div></div>
+
+    <header>
+        <div class="logo" onclick="showSection('home')">
+            <span style="color: rgb(241, 12, 12); font-style:italic;font-weight: 700;">ኤበ</span><span style="color: rgb(21, 0, 255);font-style:inherit;font-weight: 700;">አማ</span>
+        </div>
+
+        <nav>
+            <!-- Hamburger: shows only on small screens, toggles .nav-links -->
+            <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" role="button" tabindex="0">
+                <i class="fa-solid fa-grip"></i>
+                
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#" onclick="showSection('home')"><span class="am">መነሻ</span><span class="en">Home</span></a></li>
+                <li><a href="#" onclick="showSection('about')"><span class="am">ስለ እኛ</span><span class="en">About Us</span></a></li>
+                <li><a href="#" onclick="showSection('gallery')"><span class="am">ጋለሪ</span><span class="en">Gallery</span></a></li>
+                <li><a href="#" onclick="showSection('contact')"><span class="am">ለተጨማር</span><span class="en">Contact Us</span></a></li>
+                <li><button class="lang-btn" onclick="toggleLanguage()">E/አ</button></li>
+            </ul>
+
+            <div class="menu-container">
+                <div class="menu-icon" onclick="toggleMenu()" aria-label="More options" role="button" tabindex="0">☰</div>
+                <div class="dropdown" id="navDrop">
+                    <a href="#" onclick="showSection('register')">Registration</a>
+                    <a href="#" onclick="showSection('donate')">Donet Now</a>
+                    <a href="#" onclick="showSection('uplaod')">Uploads</a>
+                    <a href="#" onclick="showSection('terms-section')">Terms &amp; Legacy</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+
+        <section id="home" class="page active">
+
+          <div class="glass">
+                <h1 class="am"><span style="color:orangered ;">ኤልሻዳይ በጎ </span><span style="color:rgb(0, 17, 255) ;">አድራጎት ስራ ማህበር</span></h1>
+                <h1 class="en"><span style="color:orangered ;">Elshaddai Charity</span> Association</h1>
+                <blockquote class="am">"ለድሀ ቸርነትን የሚያደርግ ለእግዚአብሔር ያበድራል፥ በጎነቱንም መልሶ ይከፍለዋል።" <br><span>(ምሳሌ 19:17)</span><br>
+
+
+"ሖሮናዊውም ሰንባላጥ፥ ባሪያውም አሞናዊው ጦብያ፥ ዓረባዊውም ጌሳም በሰሙ ጊዜ በንቀት ሳቁብን፥ ቀላል አድርገውንም፦ ይህ የምታደርጉት ነገር ምንድር ነው? በውኑ በንጉሡ ላይ ትሸፍቱ ዘንድ ትወድዳላችሁን? አሉ።
+
+እኔም መልሼ፦። የሰማይ አምላክ ያከናውንልናል፥ እኛም ባሪያዎቹ ተነሥተን እንሠራለን፤ እናንተ ግን በኢየሩሳሌም እድል ፈንታና መብት መታሰቢያም የላችሁም አልኋቸው።"<br><span>(ነህ 2፡19፤20)</span>
+</blockquote>
+                <blockquote class="en">"Whoever is kind to the poor lends to the Lord, and he will reward them for what they have done." <br><span>(Proverbs 19:17)</span></blockquote>
+                <p>kind means a someone whoever commit it self to the others.</p>
+            </div><br>
+
+            <section id="projects" class="section bg-light">
+        <h2 class="section-title">የምንሰራቸው ስራዎች (Our Projects)</h2>
+        <div class="container project-grid">
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3 style="color: greenyellow;">የቁስ ድጋፍ</h3>
+                <p style="color: rgb(253, 250, 250);">ለተማሪዎች የትምህርት ቁሳቁሶችን እና የትምህርት ክፍያ ድጋፍ ማድረግ::</p>
+            </div>
+            <div class="card">
+                <div class="icon">🍲</div>
+                <h3 style="color: #eb0d23;">የምግብ ድጋፍ</h3>
+                <p style="color: rgb(244, 240, 240);">ምግብ ለሚያስፈልጋቸው ቤተሰቦች የአልሚ ምግቦችን ማከፋፈል::</p>
+            </div>
+            <div class="card">
+                <div class="icon">🏗️</div>
+                <h3 style="color: yellow;">የማህበረሰብ ልማት እና ክህሎት</h3>
+                <p style="color: rgb(254, 253, 253);">ለረጅም ጊዜ ዕድገት የሚረዱ መሰረተ ልማቶችን እና ክህሎቶችን መገንባት::</p>
+            </div>
+        </div>
+    </section>
+        </section>
+<section id="gallery" class="page">
+            <div class="photo-grid">
+
+            <!-- Image Viewer -->
+<div id="imageViewer" class="viewer">
+    <span class="close-btn">&times;</span>
+    <img id="viewerImg" src="" alt="">
+</div>
+                <div class="photo-card float-1"><img src="{{ asset('20250828_161110.jpg') }}" alt="Children"></div>
+                <div class="photo-card float-2"><img src="{{ asset('20250828_171106.jpg') }}" alt="Group"></div>
+                <div class="photo-card float-3"><img src="{{ asset('els2.jpg') }}" alt="Charity"></div>
+                <div class="photo-card float-4"><img src="{{ asset('20250828_170614.jpg') }}" alt="Children"></div>
+                <div class="photo-card float-5"><img src="{{ asset('20250828_151315.jpg') }}" alt="Group"></div>
+                <div class="photo-card float-6"><img src="{{ asset('20250828_161243.jpg') }}" alt="Charity"></div>
+                <div class="photo-card float-8"><img src="{{ asset('20250828_161207.jpg') }}" alt=""></div>
+                <div class="photo-card float-9"><img src="{{ asset('Gemini_Generated_Image_ozvfb5ozvfb5ozvf.png') }}" alt=""></div>
+                <div class="photo-card float-10"><img src="{{ asset('20250828_161128.jpg') }}" alt=""></div>
+                <div class="photo-card float-11"><img src="{{ asset('20250828_170614.jpg') }}" alt=""></div>
+                <div class="photo-card float-12"><img src="{{ asset('austin-kehmeier-lyiKExA4zQA-unsplash.jpg') }}" alt=""></div>
+                <div class="photo-card float-13"><img src="{{ asset('20250828_161207.jpg') }}" alt=""></div>
+                <div class="photo-card float-14"><img src="{{ asset('elshaday.jpg') }}" alt=""></div>
+                <div class="photo-card float-15"><img src="{{ asset('elogo.png') }}" alt=""></div>
+                <div class="photo-card float-16"><img src="{{ asset('els2.jpg') }}" alt=""></div>
+
+            </div>
+
+       <div>
+ <audio width="360" controls>
+<source src="{{ asset('Elishaday_ኤልሻዳይ_ነው_yishak_sedik_ይስሐቅ_ሰድቅ256k.mp3') }}">
+            </audio>
+            </div>
+             </section>
+       <section id="contact" class="page">
+        <div class="contact-container">
+            <div class="contact-card">
+           <h2>Get In Touch</h2><br>
+    <h3>We are here to help. Reach out to the Elshaday team anytime.</h3>
+<br>
+           <P><i class="fa-solid fa-phone"> Call Us:- +251900000001</i></P><br>
+           <p><i class="fa-brands fa-facebook"> Elshadaycharity</i></p><br>
+           <p><i class="fa-brands fa-tiktok">  elshadaycharity</i></p><br>
+           <p><i class="fa-solid fa-envelope"> Email Us:-info@elshadaycharity.org</i></p><br>
+           <p><i class="fa-brands fa-instagram">  Follow Us</i></p><br>
+           <p><i class="fa-solid fa-location-dot">  Wolyta Sodo, Ethiopia</i></p>
+           </div>
+           </div>
+       </section>
+
+        <section id="about" class="page">
+
+    <div class="waterfall-container">
+        <article class="waterfall-item">
+            <h2>Our Story/ታርክ</h2><br>
+            <p>Elshaday Charity Association serves as a vital bridge...</p>
+            <p>ኤልሻዳይ በጎ አድራጎት ማህበር በኅብረተሰቡ ሀብትና ዕርዳታው ይበልጥ በሚያስፈልጋቸው ግለሰቦች መካከል እንደ ወሳኝ ድልድይ ሆኖ ያገለግላል።
+               በአካባቢው ያለውን የኢኮኖሚ መበላለጥ ለመቅረፍ የተመሠረተው ድርጅታችን፥ ዘላቂ ለውጥ ሊመጣ የሚችለው ማኅበረሰቡን ከውስጥ ማብቃት
+               ስንችል ብቻ ነው በሚለው መሠረታዊ መርህ ላይ የተገነባ ነው። እኛ ዕርዳታን በማቅረብ ብቻ አንወሰንም፤ ይልቁንም ዘላቂ አጋርነትን እንፈጥራለን።
+               ባለፉት ዓመታት፣ የእኛ ውጥኖች ከተራ የዕርዳታ ስርጭት አልፈው የድህነትን፣ የድንቁርናን (ያልተማሩ መሆንን) እና የጤና ቀውሶችን መሠረታዊ መንስኤዎች ወደሚያስወግዱ የተቀናጁ ፕሮግራሞች አድገዋል። በግልጽነትና በጋራ መከባበር ላይ የተመሠረተ አካባቢን በመፍጠር፣ የወደፊቱን የለጋሾች፣ የበጎ ፈቃደኞች እና የጥቅማጥቅም ተረካቢዎች ትውልድ ለአንድ የጋራ ዓላማ እንዲተጋ ማነሳሳት እንደምንችል እናምናለን፤ ያም ዓላማ፦ ራሱን የቻለና ማንኛውንም ችግር መቋቋም የሚችል ማኅበረሰብ መገንባት ነው።</p>
+            <p class="am">ኤልሻዳይ በጎ አድራጎት ማህበር የተመሰረተው በጎነትን በተግባር ለመግለጥና የተቸገሩትን ለመርዳት ነው።</p><br>
+            <p class="en">Elshaddai Charity was established to manifest kindness through action and support those in need.</p>
+
+    </article>
+
+        <article class="waterfall-item">
+            <h2>Our Vision/ራዕይ</h2>
+            <p>A future of equality where every individual thrives independently.</p>
+            <p>Current: "A future where every individual has access to the basic necessities of life,
+              regardless of their background—empowering local communities to thrive independently."
+
+             Expanded: "We envision a world where socio-economic status no longer dictates a person's
+             quality of life. By fostering a foundation of resilience, we strive to build a future
+             where every individual possesses the tools, confidence, and opportunity to lead, innovate,
+             and thrive within their own community. We see a future of self-sustaining societies,
+             no longer reliant on external aid, but flourishing through local leadership and shared prosperity."</p>
+        </article>
+
+        <article class="waterfall-item">
+            <h2>Our Mission/ተልዕኮ</h2>
+            <p>To provide tangible, sustainable solutions through community outreach and education.</p>
+            <p>Current: "To provide tangible support and sustainable solutions through community outreach,
+               educational initiatives, and healthcare support, fostering hope and self-reliance."
+
+               Expanded: "Our mission is to serve as a catalyst for positive change by bridging the gap between
+               available resources and the communities that need them most. We work tirelessly to remove
+               the systemic barriers that prevent individuals from achieving their full potential.
+               By collaborating with local stakeholders, families, and partners, we ensure that every initiative
+               —whether in education, health, or economic support—is tailored to address the root causes of
+               inequality and promote long-term stability."</p>
+        </article>
+
+        <article class="waterfall-item">
+            <h2>Our Objectives/አላማዎች</h2>
+            <p>
+                <span style="color: #eb0d23;">Empowerment</span>: Economic self-sufficiency.
+                    We believe in the power of potential.
+                    We provide vocational training, micro-enterprise support,
+                    and mentorship to help families move from subsistence to self-sufficiency."</p>
+
+                <p><span style="color: #eb0d23;">Education</span>: Access for underprivileged children and for the community.
+                    Knowledge is the greatest equalizer. Our goal is to dismantle the barriers
+                    to learning by supplying scholastic materials, funding tuition,
+                    and creating safe, conducive environments for underprivileged students to succeed.
+                </p>
+                <p><span style="color: #eb0d23;">Healthcare</span>: Facilitating essential services.
+                    Health is the foundation of a productive life.
+                    We focus on preventive care, nutritional support, and
+                    facilitating access to basic medical services,
+                    ensuring no one is left behind due to a lack of resources."
+                </p>
+                <p><span style="color: #eb0d23;">
+                  Community Building</span>: True change happens from within.
+                  We focus on organizing community-led forums, volunteer drives,
+                  and collaborative problem-solving platforms to strengthen the social fabric of our region."
+                </p>
+        </article>
+
+        <section id="projects" class="section bg-light">
+        <h2 class="section-title">የምንሰራቸው ስራዎች (Our Projects)</h2>
+        <div class="container project-grid">
+            <div class="card">
+                <div class="icon">📚</div>
+                <h3 style="color: greenyellow;">የቁስ ድጋፍ</h3>
+                <p style="color: rgb(252, 246, 246);">ለተማሪዎች የትምህርት ቁሳቁሶችን እና የትምህርት ክፍያ ድጋፍ ማድረግ::</p>
+            </div>
+            <div class="card">
+                <div class="icon">🍲</div>
+                <h3 style="color: #eb0d23;">የምግብ ድጋፍ</h3>
+                <p style="color: rgb(247, 238, 238);">ምግብ ለሚያስፈልጋቸው ቤተሰቦች የአልሚ ምግቦችን ማከፋፈል::</p>
+            </div>
+            <div class="card">
+                <div class="icon">🏗️</div>
+                <h3 style="color: yellow;">የማህበረሰብ ልማት እና ክህሎት</h3>
+                <p style="color: #f9f4f4;">ለረጅም ጊዜ ዕድገት የሚረዱ መሰረተ ልማቶችን እና ክህሎቶችን መገንባት::</p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="waterfall">
+            <article class="fullscreen-video">
+        <video controls>
+           <source src="{{ asset('ቭ1.mp4') }}" type="">
+             </video>
+        </article>
+             </div>
+
+             <div class="waterfall">
+                <article class="fullscreen-video">
+          <video controls>
+           <source src="{{ asset('ቭ2.mp4') }}" type="">
+           </video>
+           </article>
+           </div>
+
+            <div class="waterfall">
+                <article class="fullscreen-video">
+           <video controls>
+           <source src="{{ asset('ቭ3.mp4') }}" type="">
+           </video>
+</article>
+</div>
+
+ <div class="waterfall">
+    <article class="fullscreen-video">
+            <video controls>
+           <source src="{{ asset('ቭ4.mp4') }}" type="">
+            </video>
+            </article>
+            </div>
+
+
+
+             <div class="waterfall">
+                <article class="fullscreen-video">
+          <video controls>
+           <source src="{{ asset('ቭ6.mp4') }}" type="">
+           </video>
+            </article>
+            </div>
+
+             <div class="waterfall">
+                <article class="fullscreen-video">
+           <video controls>
+           <source src="{{ asset('ቭ7.mp4') }}" type="">
+           </video>
+      </article>
+      </div>
+</section>
+</div>
+    </div>
+</section>
+<section id="donate" class="page">
+    <div class="modal-content">
+   <div>
+        <h2 class="am"><span style="color: blue;">ለጋስ በመሆን ህይወትን ይለውጡ</span></h2>
+        <h2 class="en">Be generous, change lives</h2>
+        <br>
+        <p>የእርስዎ ድጋፍ ለአንድ ሰው አዲስ ተስፋ ነው::</p>
+        <br>
+        <br>
+        <!-- BUTTON -->
+        <button class="btn-secondary" onclick="openDonateModal()">
+            አሁኑኑ ይለግሱ/Donet Now
+        </button><br>
+     <!-- PAYMENT BOX -->
+        <div id="donateModal" class="modal">
+          <div class="modal-content">
+
+            <button type="button" class="back-btn" id="donateCloseBtn" aria-label="Close">&times;</button>
+
+            <h3>Choose Payment Method</h3><br>
+
+            <div class="payment-card">
+                <h4>📱 Telebirr</h4><br>
+                <p>+2519</p>
+            </div><br>
+
+            <div class="payment-card">
+                <h4>🏦 CBE Birr</h4><br>
+                <p>1000722573138 Izra Nicol , Bedilu and Asteway</p>
+            </div><br>
+
+            <div class="payment-card">
+                <h4>💳 Bank Account</h4><br>
+                <p>Commercial Bank of Ethiopia</p>
+                <p>Account: 1000722573138 Izra Nicol , Bedilu and Asteway</p>
+            </div><br>
+
+            <div class="payment-card">
+
+                <a href="https://chapa.co/" target="_blank">
+                    <h4>🌍 Chapa Payment</h4><br>
+                    Pay Online
+                </a>
+            </div>
+          </div>
+        </div>
+        </div>
+</section>
+
+
+        <section id="register" class="page">
+            <div class="reg-form glass">
+            <h2>የሚረዱ እጆች፣ የሚቀየሩ ህይወቶች</h2>
+            <p>Helping Hands, Changing Lives.
+               ለሚያስፈልጋቸው ወገኖቻችን ተስፋን እና እንክብካቤን ለማድረስ በጋራ እንቁም::</p>
+            <a href="#register" class="btn-primary">አሁኑኑ ይቀላቀሉን</a>
+                <h2 class="am"> የአባላት ምዝገባ</h2><br>
+                <h2 class="en"> Registration</h2><br>
+                <ul id="members-list">
+    <li>Loading members...</li>
+</ul>
+                <form>
+                    <input type="text" placeholder="ሙሉ ስም / Full Name"><br><br>
+                    <input type="text" placeholder="አገር/Country"><br><br>
+                    <input type="email" placeholder="ኢሜይል / Email"><br><br>
+                    <input type="text" placeholder="PhoneNo"><br><br>
+                    <button type="submit" class="submit-btn am">ይመዝገቡ</button><br>
+                    <button type="submit" class="submit-btn en">Register</button>
+                </form>
+            </div>
+        </section>
+
+<section id="terms-section"   class="page">
+<article>
+    <div class="sub-block">
+<article class="legacy-section">
+        <h2>1. የአገልግሎት ውል (Terms of Service)</h2>
+        <br>
+        <p>ወደ ኤልሻዳይ በጎ አድራጎት ቡድን (Elshaday Charity Team) ድረ-ገጽ እንኳን በደህና መጡ።
+           ይህንን ድረ-ገጽ ሲጠቀሙ በዚህ የአገልግሎት ውል ለመገዛት እና ደንቦቹን ለማክበር ተስማምተዋል።
+           እባክዎ ውሉን በጥንቃቄ ያንብቡት።</p><br>
+
+
+            <h3>1.1 ውል መቀበል</h3>
+            <br>
+            <p>ይህንን ድረ-ገጽ በመጠቀምዎ በእነዚህ ውሎች ለመገዛት መስማማትዎን ያረጋግጣሉ።
+               በነዚህ ውሎች ካልተስማሙ ድረ-ገጹን ከመጠቀም መቆጠብ ይኖርብዎታል።</p><br>
+
+        </article>
+
+    <article class="legacy-section">
+            <h3>1.2 የዕቅዱ እና የገጹ ዓላማ፦</h3><br>
+            <p>የኤልሻዳይ በጎ አድራጎት ቡድን ማህበራዊ እገዛዎችን እና የማህበረሰብ ልማትን ለመደገፍ የተቋቋመ ለትርፍ ያልቆመ በጎ አድራጎት ስራ ነው።
+                ይህ ድረ-ገጽ መረጃዎችን፣ ወቅታዊ ዜናዎችን ለማጋራት እና የበጎ አድራጎት ልገሳዎችን ለማመቻቸት ያገለግላል።</p>
+
+
+        </article>
+        <article class="legacy-section">
+            <h3>1.3 የልገሳ እና የክፍያ ሁኔታዎች</h3><br><br>
+
+                <p><strong>በፍቃደኝነት የሚደረግ ድጋፍ፦</strong>
+                     በድረ-ገጻችን የክፍያ አማራጮች (ቴሌብር፣ ሲቢኢ ብር፣ የኢትዮጵያ ንግድ ባንክ እና ጫፓ) በኩል የሚደረጉ ልገሳዎች በሙሉ ሙሉ በሙሉ በተጠቃሚው ፍቃደኝነት ላይ የተመሰረቱ ናቸው።</p>
+                <p><strong>ትክክለኛ መረጃ ማቅረብ፦</strong></p><br>
+                    <br><p>
+                     ለጋሾች ትክክለኛ እና ህጋዊ የክፍያ መረጃ ማቅረብ አለባቸው።
+                     ተጠቃሚው የተሳሳተ መረጃ በማስገባቱ ምክንያት ለሚፈጠሩ የክፍያ ስህተቶች የኤልሻዳይ በጎ አድራጎት ቡድን ተጠያቂ አይሆንም።</p><br>
+                <p><strong>የገንዘብ ተመላሽ ፖሊሲ፦</strong></p><br>
+                     <p>የሚደረጉ ልገሳዎች ወዲያውኑ ለበጎ አድራጎት ፕሮጀክቶች እና ለማህበረሰብ ድጋፍ የሚውሉ በመሆናቸው በአጠቃላይ ተመላሽ አይደረጉም።
+                        በክፍያ ሂደትዎ ላይ እውነተኛ የቴክኒክ ስህተት ተፈጥሯል ብለው ካመኑ እባክዎ ወዲያውኑ ያግኙን።</p>
+            <br>
+
+
+
+            <h3>1.4 የስነ-ምግባር ደንብ</h3><br>
+            <p>ተጠቃሚዎች ድረ-ገጹን ለሚከተሉት ተግባራት ላለመጠቀም ተስማምተዋል፦</p><br>
+
+                <p>ለማንኛውም ማጭበርበር ወይም ህገ-ወጥ አላማዎች መጠቀም።
+                   የድረ-ገጹን ስራ፣ የደህንነት ባህሪያት ወይም የጀርባ አገልጋዮችን (backend servers) ለማስተጓጎል መሞከር።
+                   ከድረ-ገጹ ጋር በሚገናኙበት ጊዜ የራስን ማንነት ወይም ግንኙነት አሳስቶ ማቅረብ።</p><br>
+
+
+
+            <h3>1.5 የኃላፊነት ገደብ</h3><br>
+            <p>የኤልሻዳይ በጎ አድራጎት ቡድን ድረ-ገጹ ደህንነቱ የተጠበቀ እና ሁል ጊዜ የሚሰራ እንዲሆን ይጥራል።
+               ሆኖም ግን ድረ-ገጹ ያለ ምንም መቆራረጥ በቋሚነት እንደሚሰራ ዋስትና መስጠት አንችልም።
+               ይህንን ድረ-ገጽ ወይም የሶስተኛ ወገን የክፍያ መረቦችን በመጠቀምዎ ወይም ለመጠቀም ባለመቻልዎ
+               ለሚመጣ ማንኛውም ቀጥተኛም ሆነ ቀጥተኛ ያልሆነ ጉዳት ተጠያቂ አንሆንም።</p><br>
+
+
+            <h3>1.6 በውሉ ላይ የሚደረጉ ለውጦች</h3><br>
+            <p>ይህንን ውል በማንኛውም ጊዜ የማሻሻል መብታችን የተጠበቀ ነው።
+               ለውጦቹ በዚህ ገጽ ላይ ከተለጠፉበት ጊዜ ጀምሮ ወዲያውኑ ተፈጻሚ ይሆናሉ።</p>
+               </article>
+        </div>
+<article class="legacy-section">
+        <h2>2. የታሪክ ቅርስ እና የግል መረጃ ጥበቃ (Legacy &amp; Privacy Policy)</h2><br>
+
+
+            <p><strong>የድርጅታችን መርህ፦</strong> የኤልሻዳይ በጎ አድራጎት ቡድን የተመሰረተው ግልጽነት ባለውና ዘላቂ በሆነ የማህበረሰብ ተፅዕኖ ላይ ነው።
+                          የታሪክ ቅርሳችን የሚለካው ለለጋሾቻችን ባለን ታማኝነት እና ለምናገለግላቸው ወገኖች ባለን ርህራሄ ነው።
+                          እያንዳንዱ የምታደርጉት አስተዋፅዖ በማህበረሰባችን ውስጥ ዘላቂ እና ሊረጋገጥ የሚችል የበጎ ለውጥ አሻራ ጥሎ እንዲያልፍ በማድረግ፣ ክፍት
+                          እና ኦዲት ሊደረጉ የሚችሉ የፕሮጀክት መዝገቦችን ለመያዝ ቃል እንገባለን。</p><br>
+
+
+            <h3>2.1 የምንሰበስበው መረጃ</h3><br>
+            <p>ልገሳዎችን ለማመቻቸት እና ደጋፊዎቻችንን ወቅታዊ መረጃ ለማድረስ የሚከተሉትን አነስተኛ መረጃዎች ልንሰበስብ እንችላለን፦</p><br>
+
+                <p><strong>የመገናኛ መረጃ፦</strong>
+                    ስም፣ የኢሜይል አድራሻ እና የስልክ ቁጥር (በእውቂያ ቅጾች በኩል በራስዎ ፍቃድ ሲሰጥ)።</p>
+                <p><strong>የክፍያ መዝገቦች፦</strong> የተሳኩ ልገሳዎችን ለማረጋገጥ በአገር ውስጥ የክፍያ አቅራቢዎች (Telebirr, CBE, Chapa)
+                     የሚሰጡ የማጣቀሻ መለያ ቁጥሮችን (Reference IDs)። <span style="color: var(--accent-color); font-weight: 600;">
+                     የአካውንት ሙሉ ቁጥር ወይም ሚስጥራዊ የይለፍ ቁጥሮችን (PIN) በኛ ሰርቨር ላይ በፍጹም አናስቀምጥም።</span></p>
+
+
+
+            <h3>2.2 መረጃውን ለምን እንጠቀማለን?</h3><br>
+            <p>የተሰበሰበውን መረጃ ለሚከተሉት ተግባራት ብቻ እንጠቀማለን፦
+                ያደረጉትን ልገሳ ለማረጋገጥ እና ሂደቱን ለማጠናቀቅ።
+                የክፍያ ምስጋናዎችን እና የፕሮጀክቶችን ሂደት መረጃዎችን ለመላክ።
+                ለትርፍ ያልተቋቋሙ ድርጅቶች የሚፈለጉትን ህጋዊ የፋይናንስ መዝገቦች ለመያዝ።
+                </p><br>
+
+            <h3>2.3 የመረጃ አያያዝ እና የታሪክ ጥበቃ</h3><br>
+            <p>የድርጅታችንን የረጅም ጊዜ ግልጽነት ለማክበር፣ የቆዩ የልገሳ መዝገቦች እና የፋይናንስ ፕሮጀክት
+              ማጠቃለያዎች ደህንነታቸው በተጠበቀ ቦታ ይቀመጣሉ። ይህም ለኤልሻዳይ በጎ አድራጎት ቡድን የሚደረገው
+              የህዝብ ድጋፍ ታሪክ በጊዜ ሂደት ተረጋግጦ እንዲኖር ያደርጋል።
+              ማንኛውም ተጠቃሚ በግልጽ ሲጠይቅ የእሱነቱን የሚገልጹ የግል መረጃዎች እንዲደበቁ ወይም እንዲሰረዙ ይደረጋል።</p><br>
+
+
+            <h3>2.4 የሶስተኛ ወገን አገልግሎቶች</h3><br>
+            <p>ድረ-ገጻችን ከሶስተኛ ወገን የክፍያ ስርዓቶች ጋር የተገናኘ ነው። እነዚህ ውጫዊ ድርጅቶች
+              የእርስዎን የፋይናንስ ግብይቶች በራሳቸው ኢንክሪፕት በተደረጉ የደህንነት ስርዓቶች ያስተናግዳሉ።
+              ክፍያ በሚፈጽሙበት ጊዜ የቴሌብር፣ ሲቢኢ እና ጫፓ የራሳቸውን የግል መረጃ ጥበቃ ፖሊሲዎች እንዲያነቡ እናበረታታለን።</p><br>
+
+
+            <h3>2.5 ያግኙን</h3><br>
+            <p>ስለነዚህ ውሎች፣ ስለ ድርጅታችን መርህ ወይም የእርስዎ መረጃ እንዴት እንደሚይዝ ማንኛውም ጥያቄ ካለዎት፣
+             እባክዎ በይፋዊ የእውቂያ ገጻችን በኩል የኤልሻዳይ በጎ አድራጎት ቡድን ማስተባበሪያ ጽሕፈት ቤትን ያግኙ።</p>
+             </article>
+        </div>
+    </section>
+<section id="uplaod" class="page">
+    <form id="uploadForm" action="/upload-endpoint" method="POST" enctype="multipart/form-data">
+
+  <!-- Hidden input containing the original registered name (Rendered by your backend) -->
+  <input type="hidden" id="registeredName" value="" />
+
+  <!-- Name input fields -->
+  <div class="input-group">
+    <label for="uploaderName" style="color: blue;">Enter Your Full Name:</label>
+    <input type="text" id="uploaderName" placeholder="Must match your registered name" required />
+    <span id="nameFeedback" class="feedback-msg"></span>
+  </div>
+
+  <!-- Custom File Upload Button -->
+  <div class="input-group">
+    <label id="fileLabel" for="file-upload" class="custom-file-upload">
+      Choose File
+    </label>
+    <input id="file-upload" type="file" name="myFile" required />
+    <span id="fileNameDisplay">No file chosen</span>
+  </div>
+
+  <!-- Submit button -->
+  <button type="submit" id="submitBtn" class="submit-btn" disabled>Upload</button>
+</form>
+</section>
+
+
+    </main>
+
+    <script src="{{ asset('js/script.js')}}"></script>
+    <div class="footer">
+       <h6 style="font-family:Franklin; color: rgb(21, 20, 20);">Copy right &copy; 2016/2024-2026 ኤበአማ(ECT)</h6>
+    </div>
+</body>
+</html>

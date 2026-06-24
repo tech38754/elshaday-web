@@ -41,11 +41,14 @@ function toggleMobileNav() {
 
 // Opens/closes the secondary "more" dropdown (Registration/Donate/Uploads/Terms)
 function toggleMenu() {
+    const overlay = document.getElementById("menuOverlay");
+    
+    // Toggles the 'open' class which slides the drawer inside/outside smoothly
+    overlay.classList.toggle("open");
     const dropdown = document.getElementById('navDrop');
     if (dropdown) {
         dropdown.classList.toggle('show');
-    }
-}
+    }}
 
 function openDonateModal() {
     const modal = document.getElementById('donateModal');
@@ -155,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (enteredName === '') {
                 nameFeedback.textContent = '';
-                submitBtn.disabled = true;
+                submitBtn.disabled = false;
                 return;
             }
 
@@ -164,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 nameFeedback.className = 'feedback-msg success';
                 submitBtn.disabled = !isFileSelected;
             } else {
-                nameFeedback.textContent = '✗ Name does not match registered member record.';
+                nameFeedback.textContent = '';
                 nameFeedback.className = 'feedback-msg error';
                 submitBtn.disabled = true;
             }
@@ -178,3 +181,20 @@ document.addEventListener('DOMContentLoaded', () => {
         uploaderNameInput.addEventListener('input', validateForm);
     }
 });
+
+// Replace with your actual Laravel local server URL
+const API_URL = 'http://localhost:8000/api/elshaday-web-info';
+
+function getElshadayData() {
+    fetch(API_URL)
+        .then(response => response.json())
+        .then(result => {
+            console.log(result.data);
+            // Example: Inject data into an HTML element with id "content"
+            document.getElementById('content').innerText = JSON.stringify(result.data);
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+// Run the function when the page loads
+window.onload = getElshadayData;
