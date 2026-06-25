@@ -198,3 +198,33 @@ function getElshadayData() {
 
 // Run the function when the page loads
 window.onload = getElshadayData;
+
+
+function handleTikTok() {
+    console.log("TikTok button clicked!");
+    
+    const displayArea = document.getElementById('dynamic-display-area');
+    
+    // Perform your function logic here
+    displayArea.innerHTML = `
+        <div style="margin-top: 20px; padding: 15px; border-left: 4px solid #FE2C55; background: #f9f9f9;">
+        </div>
+    `;
+
+    // Direct action: Open target link
+        window.open('https://www.tiktok.com/@elshadaycharity', '_blank');
+    }
+
+
+// 2. Telegram Function
+function handleTelegram() {
+    console.log("Telegram button pressed. Running Telegram routine...");
+    
+    const displayArea = document.getElementById('dynamic-display-area');
+    displayArea.innerHTML = `
+        <div class="card">
+        </div>
+    `;
+    
+    window.open('https://t.me/@ኤልሻዳይ በጎ አድራጎት', '_blank');
+}

@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="am">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ኤልሻዳይ በጎ አድራጎት | Elshaddai Charity</title>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body class="am-mode">
@@ -13,36 +12,45 @@
     <div class="ocean"><div class="wave"></div></div>
 
     <header>
-        <div class="logo" onclick="showSection('home')">
-            <span style="color: rgb(241, 12, 12); font-style:italic;font-weight: 700;">ኤበ</span><span style="color: rgb(21, 0, 255);font-style:inherit;font-weight: 700;">አማ</span>
+    <div class="header-left">
+        <div class="menu-container">
+            <div class="menu-icon" onclick="toggleMenu()" aria-label="More options" role="button" tabindex="0">☰</div>
         </div>
+    </div>
 
-        <nav>
-            <!-- Hamburger: shows only on small screens, toggles .nav-links -->
-            <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation" role="button" tabindex="0">
-                <i class="fa-solid fa-grip"></i>
-                
-            </div>
+    <div class="logo" onclick="showSection('home')">
+        <span style="color: rgb(241, 12, 12); font-style:italic;font-weight: 700;">ኤበ</span><span style="color: rgb(21, 0, 255);font-style:inherit;font-weight: 700;">አማ</span>
+    </div>
 
-            <ul class="nav-links">
-                <li><a href="#" onclick="showSection('home')"><span class="am">መነሻ</span><span class="en">Home</span></a></li>
-                <li><a href="#" onclick="showSection('about')"><span class="am">ስለ እኛ</span><span class="en">About Us</span></a></li>
-                <li><a href="#" onclick="showSection('gallery')"><span class="am">ጋለሪ</span><span class="en">Gallery</span></a></li>
-                <li><a href="#" onclick="showSection('contact')"><span class="am">ለተጨማር</span><span class="en">Contact Us</span></a></li>
-                <li><button class="lang-btn" onclick="toggleLanguage()">E/አ</button></li>
-            </ul>
+    <div class="header-right">
+        <ul class="nav-links">
+            <li><a href="#" onclick="showSection('home')"><span class="am">መነሻ</span><span class="en">Home</span></a></li>
+            <li><a href="#" onclick="showSection('about')"><span class="am">ስለ እኛ</span><span class="en">About Us</span></a></li>
+            <li><a href="#" onclick="showSection('gallery')"><span class="am">ጋለሪ</span><span class="en">Gallery</span></a></li>
+            <li><a href="#" onclick="showSection('contact')"><span class="am">ለተጨማር</span><span class="en">Contact Us</span></a></li>
+            <li><button class="lang-btn" onclick="toggleLanguage()">E/አ</button></li>
+        </ul>
+    </div>
+</header>
 
-            <div class="menu-container">
-                <div class="menu-icon" onclick="toggleMenu()" aria-label="More options" role="button" tabindex="0">☰</div>
-                <div class="dropdown" id="navDrop">
-                    <a href="#" onclick="showSection('register')">Registration</a>
-                    <a href="#" onclick="showSection('donate')">Donet Now</a>
-                    <a href="#" onclick="showSection('uplaod')">Uploads</a>
-                    <a href="#" onclick="showSection('terms-section')">Terms &amp; Legacy</a>
-                </div>
-            </div>
+<div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMenu()">
+    <div class="mobile-dropdown" id="navDrop" onclick="event.stopPropagation()">
+        <div class="drawer-header">
+            <h3 style="color: #eb0d23;">Menu</h3>
+            <span class="close-btn" onclick="toggleMenu()">&times;</span>
+        </div>
+        <nav class="drawer-links">
+            <a href="#" onclick="showSection('home'); toggleMenu();">Home/መነሻ</a>
+            <a href="#" onclick="showSection('about'); toggleMenu();">About Us/ስለ እኛ</a>
+            <a href="#" onclick="showSection('gallery'); toggleMenu();">Gallery/ጋለሪ</a>
+            <a href="#" onclick="showSection('contact'); toggleMenu();">Contact Us/ለተጨማር</a>
+            <a href="#" onclick="showSection('register'); toggleMenu();">Registration/የአባላት ምዝገባ</a>
+            <a href="#" onclick="showSection('donate'); toggleMenu();">Donet Now/አሁኑኑ ይለግሱ</a>
+            <a href="#" onclick="showSection('uplaod'); toggleMenu();">Uploads</a>
+            <a href="#" onclick="showSection('terms-section'); toggleMenu();">Terms &amp; Legacy</a>
         </nav>
-    </header>
+    </div>
+</div>
 
     <main id="main-content">
 
@@ -91,44 +99,59 @@
     <span class="close-btn">&times;</span>
     <img id="viewerImg" src="" alt="">
 </div>
-                <div class="photo-card float-1"><img src="{{ asset('20250828_161110.jpg') }}" alt="Children"></div>
-                <div class="photo-card float-2"><img src="{{ asset('20250828_171106.jpg') }}" alt="Group"></div>
-                <div class="photo-card float-3"><img src="{{ asset('els2.jpg') }}" alt="Charity"></div>
-                <div class="photo-card float-4"><img src="{{ asset('20250828_170614.jpg') }}" alt="Children"></div>
-                <div class="photo-card float-5"><img src="{{ asset('20250828_151315.jpg') }}" alt="Group"></div>
-                <div class="photo-card float-6"><img src="{{ asset('20250828_161243.jpg') }}" alt="Charity"></div>
-                <div class="photo-card float-8"><img src="{{ asset('20250828_161207.jpg') }}" alt=""></div>
-                <div class="photo-card float-9"><img src="{{ asset('Gemini_Generated_Image_ozvfb5ozvfb5ozvf.png') }}" alt=""></div>
-                <div class="photo-card float-10"><img src="{{ asset('20250828_161128.jpg') }}" alt=""></div>
-                <div class="photo-card float-11"><img src="{{ asset('20250828_170614.jpg') }}" alt=""></div>
-                <div class="photo-card float-12"><img src="{{ asset('austin-kehmeier-lyiKExA4zQA-unsplash.jpg') }}" alt=""></div>
-                <div class="photo-card float-13"><img src="{{ asset('20250828_161207.jpg') }}" alt=""></div>
-                <div class="photo-card float-14"><img src="{{ asset('elshaday.jpg') }}" alt=""></div>
-                <div class="photo-card float-15"><img src="{{ asset('elogo.png') }}" alt=""></div>
-                <div class="photo-card float-16"><img src="{{ asset('els2.jpg') }}" alt=""></div>
+                <div class="photo-card float-1"><img src="20250828_161110.jpg" alt="Children"></div>
+                <div class="photo-card float-2"><img src="20250828_171106.jpg" alt="Group"></div>
+                <div class="photo-card float-3"><img src="els2.jpg" alt="Charity"></div>
+                <div class="photo-card float-4"><img src="20250828_170614.jpg" alt="Children"></div>
+                <div class="photo-card float-5"><img src="20250828_151315.jpg" alt="Group"></div>
+                <div class="photo-card float-6"><img src="20250828_161243.jpg" alt="Charity"></div>
+                <div class="photo-card float-8"><img src="20250828_161207.jpg" alt=""></div>
+                <div class="photo-card float-9"><img src="Gemini_Generated_Image_ozvfb5ozvfb5ozvf.png" alt=""></div>
+                <div class="photo-card float-10"><img src="20250828_161128.jpg" alt=""></div>
+                <div class="photo-card float-11"><img src="20250828_170614.jpg" alt=""></div>
+                <div class="photo-card float-12"><img src="austin-kehmeier-lyiKExA4zQA-unsplash.jpg" alt=""></div>
+                <div class="photo-card float-13"><img src="20250828_161207.jpg" alt=""></div>
+                <div class="photo-card float-14"><img src="elshaday.jpg" alt=""></div>
+                <div class="photo-card float-15"><img src="elogo.png" alt=""></div>
+                <div class="photo-card float-16"><img src="els2.jpg" alt=""></div>
 
             </div>
 
        <div>
  <audio width="360" controls>
-<source src="{{ asset('Elishaday_ኤልሻዳይ_ነው_yishak_sedik_ይስሐቅ_ሰድቅ256k.mp3') }}">
+<source src="Elishaday_ኤልሻዳይ_ነው_yishak_sedik_ይስሐቅ_ሰድቅ256k.mp3">
             </audio>
             </div>
              </section>
        <section id="contact" class="page">
         <div class="contact-container">
             <div class="contact-card">
-           <h2>Get In Touch</h2><br>
+           <h2>ለተጨማር መረጃ</h2><br>
     <h3>We are here to help. Reach out to the Elshaday team anytime.</h3>
 <br>
-           <P><i class="fa-solid fa-phone"> Call Us:- +251900000001</i></P><br>
-           <p><i class="fa-brands fa-facebook"> Elshadaycharity</i></p><br>
-           <p><i class="fa-brands fa-tiktok">  elshadaycharity</i></p><br>
-           <p><i class="fa-solid fa-envelope"> Email Us:-info@elshadaycharity.org</i></p><br>
-           <p><i class="fa-brands fa-instagram">  Follow Us</i></p><br>
-           <p><i class="fa-solid fa-location-dot">  Wolyta Sodo, Ethiopia</i></p>
+           <P><i class="fa-solid fa-phone"> +251934287380 :-
+                                            +251921686848 :-
+                                            +251947722334</i>
+                                        </P><br>
+           
            </div>
            </div>
+        <div class="social-buttons-container">
+    <button class="custom-btn btn-tiktok" onclick="handleTikTok()">
+        <i class="fab fa-tiktok"></i> Follow on TikTok
+    </button>
+    
+    <button class="custom-btn btn-telegram" onclick="handleTelegram()">
+        <i class="fab fa-telegram-plane"></i> Message Telegram
+    </button>
+</div>
+
+<div id="dynamic-display-area"></div>
+
+<!-- This area acts as a dynamic container where your functions can inject results -->
+<div id="dynamic-display-area"></div>
+
+
        </section>
 
         <section id="about" class="page">
@@ -223,7 +246,7 @@
         <div class="waterfall">
             <article class="fullscreen-video">
         <video controls>
-           <source src="{{ asset('ቭ1.mp4') }}" type="">
+           <source src="ቭ1.mp4" type="">
              </video>
         </article>
              </div>
@@ -231,7 +254,7 @@
              <div class="waterfall">
                 <article class="fullscreen-video">
           <video controls>
-           <source src="{{ asset('ቭ2.mp4') }}" type="">
+           <source src="ቭ2.mp4" type="">
            </video>
            </article>
            </div>
@@ -239,7 +262,7 @@
             <div class="waterfall">
                 <article class="fullscreen-video">
            <video controls>
-           <source src="{{ asset('ቭ3.mp4') }}" type="">
+           <source src="ቭ3.mp4" type="">
            </video>
 </article>
 </div>
@@ -247,7 +270,7 @@
  <div class="waterfall">
     <article class="fullscreen-video">
             <video controls>
-           <source src="{{ asset('ቭ4.mp4') }}" type="">
+           <source src="ቭ4.mp4" type="">
             </video>
             </article>
             </div>
@@ -257,7 +280,7 @@
              <div class="waterfall">
                 <article class="fullscreen-video">
           <video controls>
-           <source src="{{ asset('ቭ6.mp4') }}" type="">
+           <source src="ቭ6.mp4" type="">
            </video>
             </article>
             </div>
@@ -265,7 +288,7 @@
              <div class="waterfall">
                 <article class="fullscreen-video">
            <video controls>
-           <source src="{{ asset('ቭ7.mp4') }}" type="">
+           <source src="ቭ7.mp4" type="">
            </video>
       </article>
       </div>
@@ -331,9 +354,6 @@
             <a href="#register" class="btn-primary">አሁኑኑ ይቀላቀሉን</a>
                 <h2 class="am"> የአባላት ምዝገባ</h2><br>
                 <h2 class="en"> Registration</h2><br>
-                <ul id="members-list">
-    <li>Loading members...</li>
-</ul>
                 <form>
                     <input type="text" placeholder="ሙሉ ስም / Full Name"><br><br>
                     <input type="text" placeholder="አገር/Country"><br><br>
@@ -484,7 +504,7 @@
 
     </main>
 
-    <script src="{{ asset('js/script.js')}}"></script>
+    <script src="script.js"></script>
     <div class="footer">
        <h6 style="font-family:Franklin; color: rgb(21, 20, 20);">Copy right &copy; 2016/2024-2026 ኤበአማ(ECT)</h6>
     </div>

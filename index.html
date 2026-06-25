@@ -36,16 +36,16 @@
 <div class="mobile-menu-overlay" id="menuOverlay" onclick="toggleMenu()">
     <div class="mobile-dropdown" id="navDrop" onclick="event.stopPropagation()">
         <div class="drawer-header">
-            <h3>Menu</h3>
+            <h3 style="color: #eb0d23;">Menu</h3>
             <span class="close-btn" onclick="toggleMenu()">&times;</span>
         </div>
         <nav class="drawer-links">
-            <a href="#" onclick="showSection('home'); toggleMenu();">Home</a>
-            <a href="#" onclick="showSection('about'); toggleMenu();">About Us</a>
-            <a href="#" onclick="showSection('gallery'); toggleMenu();">Gallery</a>
-            <a href="#" onclick="showSection('contact'); toggleMenu();">Contact Us</a>
-            <a href="#" onclick="showSection('register'); toggleMenu();">Registration</a>
-            <a href="#" onclick="showSection('donate'); toggleMenu();">Donet Now</a>
+            <a href="#" onclick="showSection('home'); toggleMenu();">Home/መነሻ</a>
+            <a href="#" onclick="showSection('about'); toggleMenu();">About Us/ስለ እኛ</a>
+            <a href="#" onclick="showSection('gallery'); toggleMenu();">Gallery/ጋለሪ</a>
+            <a href="#" onclick="showSection('contact'); toggleMenu();">Contact Us/ለተጨማር</a>
+            <a href="#" onclick="showSection('register'); toggleMenu();">Registration/የአባላት ምዝገባ</a>
+            <a href="#" onclick="showSection('donate'); toggleMenu();">Donet Now/አሁኑኑ ይለግሱ</a>
             <a href="#" onclick="showSection('uplaod'); toggleMenu();">Uploads</a>
             <a href="#" onclick="showSection('terms-section'); toggleMenu();">Terms &amp; Legacy</a>
         </nav>
@@ -126,17 +126,32 @@
        <section id="contact" class="page">
         <div class="contact-container">
             <div class="contact-card">
-           <h2>Get In Touch</h2><br>
+           <h2>ለተጨማር መረጃ</h2><br>
     <h3>We are here to help. Reach out to the Elshaday team anytime.</h3>
 <br>
-           <P><i class="fa-solid fa-phone"> Call Us:- +251900000001</i></P><br>
-           <p><i class="fa-brands fa-facebook"> Elshadaycharity</i></p><br>
-           <p><i class="fa-brands fa-tiktok">  elshadaycharity</i></p><br>
-           <p><i class="fa-solid fa-envelope"> Email Us:-info@elshadaycharity.org</i></p><br>
-           <p><i class="fa-brands fa-instagram">  Follow Us</i></p><br>
-           <p><i class="fa-solid fa-location-dot">  Wolyta Sodo, Ethiopia</i></p>
+           <P><i class="fa-solid fa-phone"> +251934287380 :-
+                                            +251921686848 :-
+                                            +251947722334</i>
+                                        </P><br>
+           
            </div>
            </div>
+        <div class="social-buttons-container">
+    <button class="custom-btn btn-tiktok" onclick="handleTikTok()">
+        <i class="fab fa-tiktok"></i> Follow on TikTok
+    </button>
+    
+    <button class="custom-btn btn-telegram" onclick="handleTelegram()">
+        <i class="fab fa-telegram-plane"></i> Message Telegram
+    </button>
+</div>
+
+<div id="dynamic-display-area"></div>
+
+<!-- This area acts as a dynamic container where your functions can inject results -->
+<div id="dynamic-display-area"></div>
+
+
        </section>
 
         <section id="about" class="page">
